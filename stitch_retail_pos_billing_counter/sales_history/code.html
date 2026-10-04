@@ -1,0 +1,852 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#005137", "on-secondary-container": "#fefcff", "primary-container": "#131b2e", "secondary-container": "#316bf3", "tertiary-fixed-dim": "#68dba9", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "tertiary-container": "#002114", "error-container": "#ffdad6", "inverse-primary": "#bec6e0", "secondary": "#0051d5", "tertiary": "#000000", "surface-dim": "#cbdbf5", "on-primary": "#ffffff", "background": "#f8f9ff", "tertiary-fixed": "#85f8c4", "on-tertiary-fixed": "#002114", "primary": "#000000", "outline-variant": "#c6c6cd", "on-secondary": "#ffffff", "primary-fixed-dim": "#bec6e0", "on-tertiary-container": "#069669", "surface-container-low": "#eff4ff", "error": "#ba1a1a", "surface-tint": "#565e74", "on-surface-variant": "#45464d", "on-background": "#0b1c30", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "primary-fixed": "#dae2fd", "secondary-fixed-dim": "#b4c5ff", "surface-container": "#e5eeff", "on-primary-fixed-variant": "#3f465c", "inverse-on-surface": "#eaf1ff", "on-error": "#ffffff", "on-secondary-fixed-variant": "#003ea8", "surface-container-high": "#dce9ff", "inverse-surface": "#213145", "surface-bright": "#f8f9ff", "on-primary-fixed": "#131b2e", "on-primary-container": "#7c839b", "on-surface": "#0b1c30", "outline": "#76777d", "on-error-container": "#93000a", "secondary-fixed": "#dbe1ff", "on-secondary-fixed": "#00174b" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "gutter-dense": "0.5rem", "gutter": "0.75rem", "space-sm": "0.5rem" }, "fontFamily": { "display-lg": [ "Hanken Grotesk" ], "numeric-table": [ "Geist" ], "numeric-total": [ "Geist" ], "label-sm": [ "Geist" ], "headline-md": [ "Hanken Grotesk" ], "body-lg": [ "Geist" ], "label-md": [ "Geist" ], "display-sm": [ "Hanken Grotesk" ], "label-lg": [ "Geist" ], "headline-lg": [ "Hanken Grotesk" ], "body-sm": [ "Geist" ], "headline-sm": [ "Hanken Grotesk" ], "body-md": [ "Geist" ] }, "fontSize": { "display-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "numeric-table": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" } ], "numeric-total": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "display-sm": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "label-lg": [ "14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "headline-lg": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="fixed top-0 left-0 right-0 h-8 bg-primary-container text-inverse-on-surface z-50 flex items-center justify-between px-3 select-none text-xs border-b border-outline/20 font-mono"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-secondary-fixed">desktop_windows</span><span class="font-semibold text-on-secondary-container">Apex Retail POS — Windows Desktop Edition v4.12 [Offline Station · Local SQLite Engine]</span></div><div class="flex items-center"><button class="h-8 w-11 flex items-center justify-center hover:bg-surface-container-high/40 text-on-secondary-container transition-colors" title="Minimize"><span class="material-symbols-outlined text-sm">minimize</span></button><button class="h-8 w-11 flex items-center justify-center hover:bg-surface-container-high/40 text-on-secondary-container transition-colors" title="Maximize"><span class="material-symbols-outlined text-sm">crop_square</span></button><button class="h-8 w-11 flex items-center justify-center hover:bg-error hover:text-on-error text-on-secondary-container transition-colors" title="Close"><span class="material-symbols-outlined text-sm">close</span></button></div></div><aside class="fixed left-0 top-8 h-[calc(100%-2rem)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-low"><img alt="Apex Retail POS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X4p9lK3oaI5E3F-gPc5ANXZRVA3XZkp4izTHzb9crIsZvTBqRwpptKo_DlKdcQ_BMuO_mSadpnb-1KidGUe1ADMbFj2QOK6v_v52yEBWz6DnWq-zFWkL2S9yusPsWVCV2EGQhte2Md5VJsECveZF2XcfUBo2cMTd-KjYVGXkuzNc1ft0TWh6iwJWcguvR5PMEYqzs6tX8q8FQKR63-wbJB-MNRfHN89GU3cIGk15pFagFaofib8tnn5u1q"><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface truncate">APEX RETAIL MART</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Store #04 · Downtown Branch</span></div></div><div class="px-space-md py-space-sm bg-surface-container-highest/40 flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-secondary">desktop_windows</span>Terminal 02</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-secondary">schedule</span>Shift A</span></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-md" data-active-classes="bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_1px_4px_rgba(0,0,0,0.08)]"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="billing-pos" href="#"><span class="font-label-lg text-label-lg">Billing (POS)</span><span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container-high text-on-surface-variant">F1</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-colors bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_1px_4px_rgba(0,0,0,0.08)]" data-path="sales-history" href="#"><span class="font-label-lg text-label-lg">Sales History</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="products" href="#"><span class="font-label-lg text-label-lg">Products</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inventory" href="#"><span class="font-label-lg text-label-lg">Inventory</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="font-label-lg text-label-lg">Customers</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="font-label-lg text-label-lg">Reports</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="font-label-lg text-label-lg">Settings</span></a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-1 border-t border-outline/10"><div class="flex items-center gap-space-sm px-space-xs"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold truncate">Database: SQLite 3.45.1 (Local)</span></div><div class="text-xs text-on-surface-variant font-mono truncate px-space-xs">Path: C:\ApexPOS\Data\apex_pos.db</div><div class="flex items-center justify-between pt-1 text-on-surface-variant text-[11px] font-mono"><span class="truncate">100% Offline Standalone · Win64</span><span class="font-semibold text-secondary">PID 8412</span></div></div></aside><div class="pl-64"><header class="fixed top-8 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-md bg-surface-container-low px-space-md py-space-xs rounded-lg"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-base">calendar_today</span><span class="font-label-md text-label-md text-on-surface font-medium">Oct 24, 2024</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-base">timer</span><span class="font-numeric-table text-numeric-table text-on-surface font-semibold">14:38:09 EDT</span></div></div><div class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded-lg"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Shortcuts:</span><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F2</kbd> New Bill</span><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F8</kbd> Payment</span><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F9</kbd> Print</span></div></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-3 py-1 rounded bg-tertiary-fixed/40 text-on-tertiary-fixed-variant border border-on-tertiary-container/30 font-mono"><span class="material-symbols-outlined text-sm text-on-tertiary-container">storage</span><span class="font-label-sm text-label-sm font-semibold">Local SQLite: Active (apex_pos.db · WAL Mode · 0ms Latency)</span></div><div class="flex items-center gap-space-md pl-space-md"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cashier ID: CK-882</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe-HMCbHR-LMk1jiKjLtKr4oEQm7fK2tqHwiRUBG8p7rnKosNbDpIympoLM5OvOn6NI5v7_XKK_HULZ4uZco_TGGtSdjuHmL6pTOkfm4aqvvRe7Ane-Eo-S1Bv4g2gFL24ymLSeDJd59oOljJV2_w-DvtUXPX7cMoY5jo8zLj628e6J4H3mZpffUAZvgGiRnEtqvPL1SQZy5jiYBdOjXrlulc3fXT4aO4VOn-7TOZ-cS9_xJSIADCNvg"></div></div></header><main class="w-full pt-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg lg:p-space-xl flex flex-col gap-space-lg">
+<!-- Top Action & Meta Header -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Local Register Ledger</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            Offline Station #02 · SQLite Write-Ahead Log (WAL)
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Sales History &amp; Transaction Register</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Audit local SQLite transactions, reprint receipts via ESC/POS or A4, and inspect offline void logs.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors flex items-center gap-space-xs font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-lg text-secondary">file_download</span>
+          Export Local CSV
+        </button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors flex items-center gap-space-xs font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-lg text-secondary">print</span>
+          Print Register (F9)
+        </button>
+<button class="px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container transition-colors flex items-center gap-space-xs font-label-md text-label-md shadow-sm font-medium">
+<span class="material-symbols-outlined text-lg">database</span>
+          Export Local SQLite Log (CSV/DB)
+        </button>
+</div>
+</div>
+<!-- Quick Metric Cards & Sparkline Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Invoices -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Today's Invoices (Local)</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-display-sm text-display-sm text-on-surface tracking-tight">142</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center font-mono">
+<span class="material-symbols-outlined text-xs">check_circle</span> 142 committed
+          </span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Total Billed -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Billed Today</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">payments</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-display-sm text-display-sm text-on-surface tracking-tight">$4,892.40</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">98.4% Net</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-3 flex items-center justify-between">
+<span class="">Avg Ticket: $34.45</span>
+<span class="text-secondary font-medium font-mono">SQLite DB 0ms</span>
+</div>
+</div>
+<!-- Cash Total -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Local Drawer Cash</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-base">local_atm</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-numeric-total">$2,140.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">43.7%</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-3 flex items-center justify-between">
+<span class="">Till Cash: $2,440.00</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">Balanced (0 Diff)</span>
+</div>
+</div>
+<!-- Digital / UPI / Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Digital / Card Batch</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">contactless</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-numeric-total">$2,752.40</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">56.3%</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-3 flex items-center justify-between">
+<span class="">Batch #084-Local</span>
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">verified</span>
+</div>
+</div>
+<!-- Cancelled / Refunded -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Offline Voids / Returns</span>
+<span class="p-1.5 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-base">remove_shopping_cart</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-display-sm text-display-sm text-error tracking-tight">2 <span class="font-headline-md text-headline-md text-on-surface-variant font-normal">bills</span></span>
+<span class="font-label-sm text-label-sm text-error font-medium">-$12.00</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-3 flex items-center justify-between">
+<span class="font-mono">Local Audit Logged</span>
+<span class="font-label-sm text-label-sm text-error font-medium">1 Supervisor Auth</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Command Strip -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Search Input -->
+<div class="lg:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Search Invoice #, SKU, Local DB Index..." type="text">
+</div>
+<!-- Date Range -->
+<div class="lg:col-span-2 relative">
+<select class="w-full h-11 px-3 appearance-none rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option selected="">Today (Oct 24, 2024)</option>
+<option>Yesterday</option>
+<option>Last 7 Days</option>
+<option>Custom Range...</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-sm pointer-events-none">calendar_month</span>
+</div>
+<!-- Payment Method -->
+<div class="lg:col-span-2 relative">
+<select class="w-full h-11 px-3 appearance-none rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option selected="">Payment: All</option>
+<option>Cash</option>
+<option>UPI / QR</option>
+<option>Card (Visa/MC)</option>
+<option>Split Tender</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-sm pointer-events-none">expand_more</span>
+</div>
+<!-- Cashier -->
+<div class="lg:col-span-2 relative">
+<select class="w-full h-11 px-3 appearance-none rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option selected="">Cashier: All</option>
+<option>Sarah Jenkins (CK-882)</option>
+<option>David Miller (CK-814)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-sm pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="lg:col-span-2 relative">
+<select class="w-full h-11 px-3 appearance-none rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option selected="">Status: All Status</option>
+<option>Completed</option>
+<option>Refunded</option>
+<option>Cancelled / Void</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-sm pointer-events-none">filter_list</span>
+</div>
+</div>
+<!-- Quick Applied Pills / Filter Tags -->
+<div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold mr-1">Active Filters:</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+            Store #04 Downtown
+            <span class="material-symbols-outlined text-xs cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+            Shift A
+            <span class="material-symbols-outlined text-xs cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-2.5 py-1 rounded bg-secondary-container/15 text-secondary font-label-sm text-label-sm flex items-center gap-1.5 font-medium">
+            Station 02 (Local DB)
+            <span class="material-symbols-outlined text-xs cursor-pointer">close</span>
+</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline ml-2">Clear All</button>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="">Sort by: <strong class="text-on-surface font-semibold">SQLite Primary Key DESC</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="">Showing <strong>1-7</strong> of 142 records</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace: Ledger Table + Live Invoice Detail Drawer -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Transaction Register Table (8 cols on large screen) -->
+<div class="xl:col-span-8 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Table Header Panel -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">storage</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Local SQLite Transactions</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">142 Records</span>
+</div>
+<div class="flex items-center gap-space-sm font-mono text-xs text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> Local Disk I/O: 0.1ms</span>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Re-query local database">
+<span class="material-symbols-outlined text-base">refresh</span>
+</button>
+</div>
+</div>
+<!-- Dense Tabular Content -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/60 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md font-semibold">Invoice / RowID</th>
+<th class="py-3 px-space-md font-semibold">DB Commit Time</th>
+<th class="py-3 px-space-md font-semibold">Customer</th>
+<th class="py-3 px-space-md font-semibold">Items</th>
+<th class="py-3 px-space-md font-semibold">Payment</th>
+<th class="py-3 px-space-md font-semibold">Cashier</th>
+<th class="py-3 px-space-md font-semibold text-right">Amount</th>
+<th class="py-3 px-space-md font-semibold text-center">Status</th>
+<th class="py-3 px-space-md font-semibold text-right">Local Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-md text-body-md text-on-surface">
+<!-- Row 1 (Selected Active Row) -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container-high/40 transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-secondary font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-secondary"></span>
+                    #INV-2025-08492
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">14:38:09.102</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8492-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Walk-in Customer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offline Guest · #G-4019</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">4 items (7 units)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-xs text-on-surface">payments</span>
+                    Cash
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-semibold">SJ</span>
+<span class="font-label-sm text-label-sm text-on-surface">S. Jenkins</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $43.20
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-transparent"></span>
+                    #INV-2025-08491
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">14:22:15.891</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8491-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Robert Chen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+1 555-0192</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">12 items</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container/15 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">credit_card</span>
+                    Visa ····4821
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-semibold">SJ</span>
+<span class="font-label-sm text-label-sm text-on-surface">S. Jenkins</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $128.50
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-transparent"></span>
+                    #INV-2025-08490
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">14:05:40.450</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8490-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Priya Sharma</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">Gold Tier</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+1 555-0941</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">3 items</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">qr_code_2</span>
+                    UPI / QR
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-semibold">SJ</span>
+<span class="font-label-sm text-label-sm text-on-surface">S. Jenkins</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $34.75
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 (Cancelled / Void with Offline Audit Log) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group bg-error-container/10">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface-variant font-semibold line-through">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-error"></span>
+                    #INV-2025-08489
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface-variant">13:48:02.118</span>
+<span class="font-label-sm text-label-sm text-error font-mono">Voided 13:50 (Offline Log)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Walk-in Customer</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Wrong SKU Scanned (Local Till)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium line-through">1 item</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-xs">payments</span>
+                    Cash (Voided)
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold">DM</span>
+<span class="font-label-sm text-label-sm text-on-surface">D. Miller</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-error font-bold line-through">
+                  $12.00
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Voided (DB) 
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="View SQLite Void Audit Record">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Print Local ESC/POS Cancellation Slip">
+<span class="material-symbols-outlined text-sm">receipt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-transparent"></span>
+                    #INV-2025-08488
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">13:30:19.340</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8488-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Marcus Brody</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Corporate Account</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">8 items</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-variant text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">call_split</span>
+                    Split (Cash+Card)
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-semibold">SJ</span>
+<span class="font-label-sm text-label-sm text-on-surface">S. Jenkins</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $94.20
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-transparent"></span>
+                    #INV-2025-08487
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">13:12:51.620</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8487-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Elena Rostova</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+1 555-8832</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">5 items</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container/15 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">credit_card</span>
+                    MC ····9920
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-semibold">SJ</span>
+<span class="font-label-sm text-label-sm text-on-surface">S. Jenkins</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $56.80
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-3.5 px-space-md font-headline-sm text-headline-sm text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-6 rounded-full bg-transparent"></span>
+                    #INV-2025-08486
+                  </div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">12:45:00.088</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TxID: #8486-W</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Walk-in Customer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offline Guest · #G-4018</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">2 items</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-xs">payments</span>
+                    Cash
+                  </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-on-surface font-semibold">DM</span>
+<span class="font-label-sm text-label-sm text-on-surface">D. Miller</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-numeric-total text-headline-sm text-on-surface font-bold">
+                  $8.50
+                </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Committed
+                  </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="View Record">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="ESC/POS Thermal Reprint (COM3)">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors" title="Offline Void / Return">
+<span class="material-symbols-outlined text-sm">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Controls -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="">Rows per page:</span>
+<select class="px-2 py-1 rounded bg-surface-container text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option selected="">10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-mono">Showing 1-10 of 142 records [SQLite Engine]</span>
+</div>
+<!-- Page Navigation -->
+<div class="flex items-center gap-space-xs">
+<button class="p-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" disabled="">
+<span class="material-symbols-outlined text-base">first_page</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" disabled="">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<div class="flex items-center gap-1 px-1">
+<button class="w-8 h-8 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold">3</button>
+<span class="px-1 text-on-surface-variant font-label-md text-label-md">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold">15</button>
+</div>
+<button class="p-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-base">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Selected Invoice Detail Drawer / Audit Panel (4 cols on large screen) -->
+<div class="xl:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden sticky top-28">
+<!-- Drawer Header with Invoice ID & Quick Actions -->
+<div class="p-space-lg bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary font-bold uppercase tracking-wider font-mono">
+              Local ESC/POS Receipt Tape (COM3)
+            </span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Close Preview">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">#INV-2025-08492</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5 font-mono">
+<span class="material-symbols-outlined text-xs">schedule</span> Oct 24, 2024 · 14:38:09.102 (Local)
+              </span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold font-mono">
+              Committed
+            </span>
+</div>
+</div>
+<!-- Thermal Receipt Body Simulation -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Store Meta & Customer Affiliation Strip -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Walk-in Customer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Offline Local Cashier Profile</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Station / Cashier</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold">T-02 · Sarah J.</p>
+</div>
+</div>
+<!-- Line Items Breakdown -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between py-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="">Item &amp; Description</span>
+<span class="">Qty x Price</span>
+<span class="">Ext. Total</span>
+</div>
+<!-- Items List -->
+<div class="flex flex-col divide-y-0 gap-space-xs max-h-60 overflow-y-auto pr-1">
+<!-- Item 1 -->
+<div class="flex items-center justify-between py-2 px-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Organic Whole Milk 1 Gallon</span>
+<span class="font-numeric-table text-numeric-table text-on-surface-variant font-mono">SKU: 88402-9102</span>
+</div>
+<div class="font-numeric-table text-numeric-table text-on-surface-variant whitespace-nowrap px-2">
+                  2 × $4.50
+                </div>
+<div class="font-numeric-table text-numeric-table text-on-surface font-bold whitespace-nowrap">
+                  $9.00
+                </div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between py-2 px-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Artisan Sourdough Loaf</span>
+<span class="font-numeric-table text-numeric-table text-on-surface-variant font-mono">SKU: 31209-4412</span>
+</div>
+<div class="font-numeric-table text-numeric-table text-on-surface-variant whitespace-nowrap px-2">
+                  1 × $5.20
+                </div>
+<div class="font-numeric-table text-numeric-table text-on-surface font-bold whitespace-nowrap">
+                  $5.20
+                </div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between py-2 px-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Avocado Hass Premium (Bag)</span>
+<span class="font-numeric-table text-numeric-table text-on-surface-variant font-mono">SKU: 44910-1849</span>
+</div>
+<div class="font-numeric-table text-numeric-table text-on-surface-variant whitespace-nowrap px-2">
+                  1 × $6.50
+                </div>
+<div class="font-numeric-table text-numeric-table text-on-surface font-bold whitespace-nowrap">
+                  $6.50
+                </div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between py-2 px-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Fairtrade Roast Coffee Beans 500g</span>
+<span class="font-numeric-table text-numeric-table text-on-surface-variant font-mono">SKU: 90218-3829</span>
+</div>
+<div class="font-numeric-table text-numeric-table text-on-surface-variant whitespace-nowrap px-2">
+                  3 × $7.50
+                </div>
+<div class="font-numeric-table text-numeric-table text-on-surface font-bold whitespace-nowrap">
+                  $22.50
+                </div>
+</div>
+</div>
+</div>
+<!-- Ledger Accounting & Tax Summary Block -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="">Subtotal (4 line items)</span>
+<span class="font-numeric-table text-numeric-table text-on-surface font-semibold">$43.20</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="">Applied Store Promo</span>
+<span class="font-numeric-table text-numeric-table text-on-tertiary-container font-semibold">-$0.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="">Sales Tax (State 6.25% + City 1.75%)</span>
+<span class="font-numeric-table text-numeric-table text-on-surface font-semibold">Included in Price</span>
+</div>
+<div class="h-0.5 bg-surface-container-high my-1"></div>
+<div class="flex justify-between items-baseline pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Grand Total</span>
+<span class="font-numeric-total text-numeric-total text-on-surface font-bold leading-none">$43.20</span>
+</div>
+<div class="flex justify-between items-center pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">check_circle</span>
+                Tendered: Cash $50.00
+              </span>
+<span class="font-numeric-table text-numeric-table text-on-surface font-bold">Change: $6.80</span>
+</div>
+</div>
+<!-- Barcode Verification Area -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col items-center justify-center gap-1 text-center font-mono">
+<div class="flex items-center justify-center gap-0.5 tracking-widest text-on-surface font-mono font-bold text-xs select-none">
+              ||||| | |||| ||| |||||| | || ||||| |||| || ||| |||||||
+            </div>
+<span class="font-numeric-table text-label-sm text-on-surface-variant">SQLITE ROW_ID: 8492 · TILL-02</span>
+</div>
+<!-- Action Command Hub -->
+<div class="flex flex-col gap-space-sm pt-2">
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-2.5 px-space-sm rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container transition-colors flex items-center justify-center gap-space-xs font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-base">print</span>
+                ESC/POS Thermal (COM3)
+              </button>
+<button class="py-2.5 px-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center gap-space-xs font-label-md text-label-md">
+<span class="material-symbols-outlined text-base text-secondary">description</span>
+                Print Windows A4
+              </button>
+</div>
+<button class="w-full py-2.5 px-space-sm rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors flex items-center justify-center gap-space-xs font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-base">assignment_return</span>
+              Initiate Offline Item Return / Void (F4)
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Instant interactive feel for row selection and drawer preview updates
+  document.querySelectorAll('tbody tr').forEach(row => {
+    row.addEventListener('click', function() {
+      document.querySelectorAll('tbody tr').forEach(r => {
+        r.classList.remove('bg-surface-container-low/70');
+        const indicator = r.querySelector('td:first-child span.rounded-full');
+        if (indicator) indicator.classList.remove('bg-secondary');
+      });
+      this.classList.add('bg-surface-container-low/70');
+      const indicator = this.querySelector('td:first-child span.rounded-full');
+      if (indicator && !indicator.classList.contains('bg-error')) {
+        indicator.classList.add('bg-secondary');
+      }
+    });
+  });
+</script></main></div>
+
+</body></html>

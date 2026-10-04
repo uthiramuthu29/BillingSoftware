@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#005137", "on-secondary-container": "#fefcff", "primary-container": "#131b2e", "secondary-container": "#316bf3", "tertiary-fixed-dim": "#68dba9", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "tertiary-container": "#002114", "error-container": "#ffdad6", "inverse-primary": "#bec6e0", "secondary": "#0051d5", "tertiary": "#000000", "surface-dim": "#cbdbf5", "on-primary": "#ffffff", "background": "#f8f9ff", "tertiary-fixed": "#85f8c4", "on-tertiary-fixed": "#002114", "primary": "#000000", "outline-variant": "#c6c6cd", "on-secondary": "#ffffff", "primary-fixed-dim": "#bec6e0", "on-tertiary-container": "#069669", "surface-container-low": "#eff4ff", "error": "#ba1a1a", "surface-tint": "#565e74", "on-surface-variant": "#45464d", "on-background": "#0b1c30", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "primary-fixed": "#dae2fd", "secondary-fixed-dim": "#b4c5ff", "surface-container": "#e5eeff", "on-primary-fixed-variant": "#3f465c", "inverse-on-surface": "#eaf1ff", "on-error": "#ffffff", "on-secondary-fixed-variant": "#003ea8", "surface-container-high": "#dce9ff", "inverse-surface": "#213145", "surface-bright": "#f8f9ff", "on-primary-fixed": "#131b2e", "on-primary-container": "#7c839b", "on-surface": "#0b1c30", "outline": "#76777d", "on-error-container": "#93000a", "secondary-fixed": "#dbe1ff", "on-secondary-fixed": "#00174b" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "gutter-dense": "0.5rem", "gutter": "0.75rem", "space-sm": "0.5rem" }, "fontFamily": { "display-lg": [ "Hanken Grotesk" ], "numeric-table": [ "Geist" ], "numeric-total": [ "Geist" ], "label-sm": [ "Geist" ], "headline-md": [ "Hanken Grotesk" ], "body-lg": [ "Geist" ], "label-md": [ "Geist" ], "display-sm": [ "Hanken Grotesk" ], "label-lg": [ "Geist" ], "headline-lg": [ "Hanken Grotesk" ], "body-sm": [ "Geist" ], "headline-sm": [ "Hanken Grotesk" ], "body-md": [ "Geist" ] }, "fontSize": { "display-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "numeric-table": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" } ], "numeric-total": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "display-sm": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "label-lg": [ "14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "headline-lg": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased select-none">
+<!-- 0. Native Windows Desktop Title Bar -->
+<div class="fixed top-0 left-0 right-0 h-8 bg-[#0f172a] text-slate-200 z-[100] flex items-center justify-between px-2 select-none border-b border-slate-800">
+<div class="flex items-center gap-2">
+<img alt="Apex POS Icon" class="h-4 w-4 object-contain rounded-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1X4p9lK3oaI5E3F-gPc5ANXZRVA3XZkp4izTHzb9crIsZvTBqRwpptKo_DlKdcQ_BMuO_mSadpnb-1KidGUe1ADMbFj2QOK6v_v52yEBWz6DnWq-zFWkL2S9yusPsWVCV2EGQhte2Md5VJsECveZF2XcfUBo2cMTd-KjYVGXkuzNc1ft0TWh6iwJWcguvR5PMEYqzs6tX8q8FQKR63-wbJB-MNRfHN89GU3cIGk15pFagFaofib8tnn5u1q"/>
+<span class="font-label-md text-xs text-slate-300 font-medium tracking-wide">Apex Retail POS — Windows Desktop Edition v4.12 <span class="text-emerald-400 font-semibold">[Offline Station · Local SQLite Engine]</span></span>
+</div>
+<div class="flex items-center text-slate-400">
+<!-- Minimize -->
+<button class="w-10 h-8 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors" title="Minimize" type="button">
+<span class="text-sm font-bold">―</span>
+</button>
+<!-- Maximize / Restore -->
+<button class="w-10 h-8 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors" title="Maximize / Restore" type="button">
+<span class="text-xs font-semibold leading-none border border-current w-3 h-3 inline-block"></span>
+</button>
+<!-- Close -->
+<button class="w-11 h-8 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" title="Exit / Close Counter" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+<aside class="fixed left-0 top-8 h-[calc(100%-2rem)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-low"><img alt="Apex Retail POS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X4p9lK3oaI5E3F-gPc5ANXZRVA3XZkp4izTHzb9crIsZvTBqRwpptKo_DlKdcQ_BMuO_mSadpnb-1KidGUe1ADMbFj2QOK6v_v52yEBWz6DnWq-zFWkL2S9yusPsWVCV2EGQhte2Md5VJsECveZF2XcfUBo2cMTd-KjYVGXkuzNc1ft0TWh6iwJWcguvR5PMEYqzs6tX8q8FQKR63-wbJB-MNRfHN89GU3cIGk15pFagFaofib8tnn5u1q"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface truncate">APEX RETAIL MART</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Store #04 · Downtown Branch</span></div></div><div class="px-space-md py-space-sm bg-surface-container-highest/40 flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-secondary">desktop_windows</span>Terminal 02 · Offline Standalone</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-secondary">schedule</span>Shift A</span></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-md" data-active-classes="bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_1px_4px_rgba(0,0,0,0.08)]"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_1px_4px_rgba(0,0,0,0.08)]" data-path="billing-pos" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">point_of_sale</span><span class="font-label-lg text-label-lg">Billing (POS)</span></div><span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container-high/30 text-on-secondary-container font-bold">F1</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sales-history" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">receipt_long</span><span class="font-label-lg text-label-lg">Sales History</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="products" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">inventory_2</span><span class="font-label-lg text-label-lg">Products (Local DB)</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inventory" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">warehouse</span><span class="font-label-lg text-label-lg">Inventory</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="customers" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">groups</span><span class="font-label-lg text-label-lg">Customers</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">analytics</span><span class="font-label-lg text-label-lg">Reports &amp; Z-Report</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-xl">database</span><span class="font-label-lg text-label-lg">SQLite Settings</span></div></a></nav></div><div class="p-space-md bg-surface-container-low flex flex-col gap-space-xs border-t border-surface-container-high/60"><div class="flex items-center gap-space-sm px-space-xs"><span class="w-2 h-2 rounded-full bg-emerald-600"></span><span class="font-label-sm text-label-sm text-emerald-800 font-bold truncate">Database: SQLite 3.45.1 (Local)</span></div><div class="text-[10.5px] font-mono text-on-surface-variant px-space-xs truncate" title="C:\ApexPOS\Data\apex_pos.db">Path: C:\ApexPOS\Data\apex_pos.db</div><div class="flex items-center justify-between pt-1 text-on-surface-variant px-space-xs border-t border-surface-container/60 mt-1"><span class="font-label-sm text-[11px] text-emerald-700 font-semibold">100% Offline Standalone</span><span class="font-numeric-table text-xs text-on-surface-variant">Win64 · PID 8412</span></div></div></aside><div class="pl-64"><header class="fixed top-8 left-64 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl border-b border-surface-container-high/40"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md bg-surface-container-low px-space-md py-space-xs rounded-lg"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-base">calendar_today</span><span class="font-label-md text-label-md text-on-surface font-medium">Oct 24, 2025</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-base">timer</span><span class="font-numeric-table text-numeric-table text-on-surface font-semibold">14:38:22 EDT</span></div></div><div class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded-lg"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Shortcuts:</span><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F2</kbd> New Bill</span><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F8</kbd> Payment</span><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F9</kbd> Print</span><span class="font-label-sm text-label-sm text-on-surface"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table shadow-[0_1px_2px_rgba(0,0,0,0.08)]">F10</kbd> DB Backup</span></div></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-2.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800"><span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span><span class="material-symbols-outlined text-sm text-emerald-700">database</span><div class="flex flex-col text-left"><span class="font-label-sm text-xs font-bold leading-none">Local SQLite: Active</span><span class="text-[10px] text-emerald-700 font-mono leading-tight">apex_pos.db · 0ms Latency · WAL Mode</span></div></div><div class="flex items-center gap-space-md pl-space-md border-l border-surface-container-high"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant">Counter: CK-882 (Local Auth)</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe-HMCbHR-LMk1jiKjLtKr4oEQm7fK2tqHwiRUBG8p7rnKosNbDpIympoLM5OvOn6NI5v7_XKK_HULZ4uZco_TGGtSdjuHmL6pTOkfm4aqvvRe7Ane-Eo-S1Bv4g2gFL24ymLSeDJd59oOljJV2_w-DvtUXPX7cMoY5jo8zLj628e6J4H3mZpffUAZvgGiRnEtqvPL1SQZy5jiYBdOjXrlulc3fXT4aO4VOn-7TOZ-cS9_xJSIADCNvg"/></div></div></header><main class="w-full pt-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- POS Working Canvas -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- 1. Top Counter Action Header -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Invoice: #INV-2025-08492</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase font-semibold">Local Uncommitted</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">24 Oct 2025 · 14:38:22 · Reg 04 · Local SQLite Session</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-sm">inventory</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Local Shift Batch:</span>
+<span class="font-numeric-table text-numeric-table text-on-surface font-bold">#BT-9904</span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" type="button">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table text-label-sm shadow-sm">F2</kbd>
+<span class="font-label-lg text-label-lg font-medium">New Bill (Clear)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" type="button">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table text-label-sm shadow-sm">F4</kbd>
+<span class="font-label-lg text-label-lg font-medium">Hold Bill</span>
+<span class="ml-1 px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">2 locally held</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" type="button">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table text-label-sm shadow-sm">F7</kbd>
+<span class="font-label-lg text-label-lg font-medium">+ Fee / Delivery</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table text-label-sm shadow-sm">F10</kbd>
+<span class="font-label-lg text-label-lg font-medium">Backup DB</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">history</span>
+<span class="font-label-lg text-label-lg font-medium">Recall</span>
+</button>
+</div>
+</section>
+<!-- 2. High-Visibility Product Search & Active Dropdown Result Preview -->
+<section class="relative z-30">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex-1 flex items-center bg-surface-container-low px-space-md py-2.5 rounded-lg gap-space-md focus-within:bg-surface-container-lowest focus-within:shadow-[0_0_0_2px_rgba(0,81,213,0.3)] transition-all">
+<span class="material-symbols-outlined text-secondary text-2xl">barcode_scanner</span>
+<input class="w-full bg-transparent outline-none font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant font-medium" placeholder="Scan Barcode / Search Product by Name, SKU, or Code... [Press F1]" type="text" value="Whole"/>
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Press</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm font-semibold shadow-sm">Enter ↵</kbd>
+<span class="font-label-sm text-label-sm">to Add</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-semibold hover:bg-secondary/90 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add Custom SKU</span>
+</button>
+</div>
+</div>
+<!-- Instant Match Dropdown Popover (Visualized in Active Open State) -->
+<div class="mt-space-xs p-space-sm bg-surface-container-lowest rounded-xl shadow-xl flex flex-col gap-space-xs border border-surface-container-high">
+<div class="px-space-sm py-1 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>3 LOCAL SQLITE RECORDS FOUND FOR QUERY “Whole” (USE ↑ ↓ TO NAVIGATE)</span>
+<span class="text-secondary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>SQLite Index Match (0.4ms)</span>
+</div>
+<!-- Matching Item 1 (Highlighted) -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-space-md">
+<img class="w-10 h-10 rounded object-cover shadow-sm bg-surface-container" data-alt="Close-up commercial packaging of organic whole milk bottle with green eco-label on pure white studio background with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6e0h4xCzpGRq9rC_uc2LzaVyuHnPbfydaLnqKfp1Qe-EstM2eD3ekxAP6DYdiunPS9xYsyDEJy6v6SBF9Z2FMZEKR-vA8C2Zr2_At5WtQJxI7xcw_K0QQMfK8AzPJ8s7K9WeUANqdB_C77BdMdpt9fEyV-qNMja5bkAC15Pqa-l0-kLCJnS-VJyI1_u_0lMiz5_KTXdsp-BIv20AVBQkq8VZK8lEX8h_lR1mIuz4IA2tMD7idK7rMqg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Organic Whole Milk 1L</span>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-numeric-table">SKU: MLK-102</span>
+<span>·</span>
+<span class="text-on-tertiary-container font-semibold">48 in local stock</span>
+<span>·</span>
+<span>GST: 5%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-numeric-table font-bold">$4.20</span>
+<span class="px-2 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold">Select [Enter]</span>
+</div>
+</div>
+<!-- Matching Item 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-space-md">
+<img class="w-10 h-10 rounded object-cover shadow-sm bg-surface-container" data-alt="Artisanal glass jar of creamy golden almond butter against bright minimalist counter with soft shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLSWU3pbxlTHAc-Mqey5VS3cENIrIEJE0ueqOdcnfZjA6UfMHdAmx5ABljRdSO_FU2qa8CPI2zOnlPJ8LRRiBFCt4a7Uzf8dQqAAXuw66YSGYvTLw0-iFXREZCK1JIRG4HYGACfoVU3rQfNOGcAhsNW7xdwKbdSmdlZ5T2E9DNvB37i-KkBNUK0NhMrtVXE9su0Y_bpy8UXsjffmHmSlK0EWaw3geYvPZhT85iXcXgZE66XrjXlP--gA"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Almond Butter Creamy 350g</span>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-numeric-table">SKU: NUT-204</span>
+<span>·</span>
+<span class="text-on-surface-variant">19 in local stock</span>
+<span>·</span>
+<span>GST: 12%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-numeric-table font-bold">$8.50</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">add_circle</span>
+</div>
+</div>
+<!-- Matching Item 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-space-md">
+<img class="w-10 h-10 rounded object-cover shadow-sm bg-surface-container" data-alt="Loaf of freshly sliced whole wheat bakery sandwich bread in transparent packaging with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1BrYEluiIlKtpNtUbcAvgOGX9g3RMv934nQfuPgJJV3whu9Fqt1717OYdaXWR7VGuL9MrfE59KP6Ffts5kv8EZBXnXu69O--fxJehLYPyX-LGgCtLVeK-QWZJdeZ3tIN4jEtCQUi4Lwk5tzxjaRqi1qMqiQfuLzB7epZM8jPiC0wHIGCEuYF6H-k92aCLbrD42XIRDWuLS6w6naETwHlQH9L20bconHOD2hXt5LJdmC2sfZYUljn6Dg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Whole Wheat Sandwich Bread</span>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-numeric-table">SKU: BAK-011</span>
+<span>·</span>
+<span class="text-on-tertiary-container font-semibold">62 in local stock</span>
+<span>·</span>
+<span>GST: 0%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-numeric-table font-bold">$3.10</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Two-Column High-Speed Cashier Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / MAIN COLUMN: Line Items & Ledger Table (7 Cols) -->
+<section class="xl:col-span-7 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Bar / Quick Summary -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Cart Line Items</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">4 Items</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span>Tax Mode: <strong class="text-on-surface">GST Inclusive</strong></span>
+<span>·</span>
+<span>Price Tier: <strong class="text-on-surface">Retail MRP</strong></span>
+<span>·</span>
+<span class="text-emerald-700 font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>SQLite DB Locked (WAL)</span>
+</div>
+</div>
+<!-- Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-highest/30 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-md font-semibold">Item &amp; SKU</th>
+<th class="py-2.5 px-space-sm text-right font-semibold">Rate</th>
+<th class="py-2.5 px-space-sm text-center font-semibold">Qty</th>
+<th class="py-2.5 px-space-sm text-right font-semibold">Disc (%)</th>
+<th class="py-2.5 px-space-sm text-right font-semibold">GST</th>
+<th class="py-2.5 px-space-md text-right font-semibold">Total</th>
+<th class="py-2.5 px-space-sm text-center font-semibold">Act</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Item Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Farm Fresh Whole Milk 1L</span>
+<span class="font-numeric-table text-label-sm text-on-surface-variant">SKU: MLK-1029</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table font-semibold text-on-surface">$4.20</td>
+<td class="py-space-md px-space-sm text-center">
+<div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center bg-transparent font-numeric-table text-numeric-table font-bold text-on-surface outline-none" type="text" value="2"/>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">0%</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">5%</td>
+<td class="py-space-md px-space-md text-right font-numeric-table text-headline-sm font-bold text-on-surface">$8.40</td>
+<td class="py-space-md px-space-sm text-center">
+<button class="p-1 rounded text-error hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</td>
+</tr>
+<!-- Item Row 2 -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Golden Roasted Coffee Beans 500g</span>
+<span class="font-numeric-table text-label-sm text-on-surface-variant">SKU: BEV-4401</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table font-semibold text-on-surface">$14.50</td>
+<td class="py-space-md px-space-sm text-center">
+<div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center bg-transparent font-numeric-table text-numeric-table font-bold text-on-surface outline-none" type="text" value="1"/>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-tertiary-container font-semibold">10% (-$1.45)</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">12%</td>
+<td class="py-space-md px-space-md text-right font-numeric-table text-headline-sm font-bold text-on-surface">$13.05</td>
+<td class="py-space-md px-space-sm text-center">
+<button class="p-1 rounded text-error hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</td>
+</tr>
+<!-- Item Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Organic Himalayan Pink Salt 1kg</span>
+<span class="font-numeric-table text-label-sm text-on-surface-variant">SKU: GRC-8812</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table font-semibold text-on-surface">$3.80</td>
+<td class="py-space-md px-space-sm text-center">
+<div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center bg-transparent font-numeric-table text-numeric-table font-bold text-on-surface outline-none" type="text" value="3"/>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">0%</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">0%</td>
+<td class="py-space-md px-space-md text-right font-numeric-table text-headline-sm font-bold text-on-surface">$11.40</td>
+<td class="py-space-md px-space-sm text-center">
+<button class="p-1 rounded text-error hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</td>
+</tr>
+<!-- Item Row 4 -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Cotton Kitchen Towels (Pack of 3)</span>
+<span class="font-numeric-table text-label-sm text-on-surface-variant">SKU: HME-0914</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table font-semibold text-on-surface">$8.90</td>
+<td class="py-space-md px-space-sm text-center">
+<div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center bg-transparent font-numeric-table text-numeric-table font-bold text-on-surface outline-none" type="text" value="1"/>
+<button class="w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-tertiary-container font-semibold">5% (-$0.45)</td>
+<td class="py-space-md px-space-sm text-right font-numeric-table text-numeric-table text-on-surface-variant">18%</td>
+<td class="py-space-md px-space-md text-right font-numeric-table text-headline-sm font-bold text-on-surface">$8.45</td>
+<td class="py-space-md px-space-sm text-center">
+<button class="p-1 rounded text-error hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Line Items Table Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total 4 Items (<span class="text-secondary font-bold">7 Units</span>)</span>
+<button class="flex items-center gap-space-xs text-error hover:text-error/80 font-label-md text-label-md font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-base">delete_sweep</span>
+<span>Clear Cart [Esc]</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-lowest px-space-sm py-1.5 rounded-lg border border-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-base mr-1">loyalty</span>
+<input class="bg-transparent font-label-md text-label-md text-on-surface outline-none w-36" placeholder="Promo / Coupon code" type="text"/>
+<button class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">Apply</button>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-sm border border-surface-container-high" title="Terminal Hardware Diagnostics" type="button">
+<span class="material-symbols-outlined text-base">settings</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Access Category / Fast Touch Keys Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-base">touch_app</span>
+              Speed Touch Keys (Frequently Billed Items)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Press 1-4 for Fast Add</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all text-left flex flex-col justify-between h-20 shadow-sm" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-body-md text-on-surface line-clamp-1">Reusable Carry Bag</span>
+<kbd class="px-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant font-bold">1</kbd>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-numeric-table">SKU: BAG-01</span>
+<span class="font-numeric-table text-headline-sm font-bold text-secondary">$0.25</span>
+</div>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all text-left flex flex-col justify-between h-20 shadow-sm" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-body-md text-on-surface line-clamp-1">Sparkling Water 500ml</span>
+<kbd class="px-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant font-bold">2</kbd>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-numeric-table">SKU: WAT-11</span>
+<span class="font-numeric-table text-headline-sm font-bold text-secondary">$1.75</span>
+</div>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all text-left flex flex-col justify-between h-20 shadow-sm" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-body-md text-on-surface line-clamp-1">Banana (Single Cav.)</span>
+<kbd class="px-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant font-bold">3</kbd>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-numeric-table">SKU: FRU-09</span>
+<span class="font-numeric-table text-headline-sm font-bold text-secondary">$0.60</span>
+</div>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all text-left flex flex-col justify-between h-20 shadow-sm" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-body-md text-on-surface line-clamp-1">Organic Lemon Tea</span>
+<kbd class="px-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant font-bold">4</kbd>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-numeric-table">SKU: TEA-55</span>
+<span class="font-numeric-table text-headline-sm font-bold text-secondary">$2.80</span>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: CustomerAffiliation & Payment Tender Engine (5 Cols) -->
+<section class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- 3A. Customer Membership Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">person</span>
+              Customer Affiliation
+            </span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              Local Profile Loaded
+            </span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-bold font-headline-sm">
+                W
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Walk-in Customer</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Default Local</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier: Standard Member · Local Store Points: <strong>0</strong></span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary" type="button">
+<span class="material-symbols-outlined text-base">phone_in_talk</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" type="button">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold font-numeric-table text-label-sm shadow-sm">F6</kbd>
+<span>Local Members</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span>+ New Offline Member</span>
+</button>
+</div>
+</div>
+<!-- 3B. Bill Breakdown Summary Ledger Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tax &amp; Cost Breakdown</span>
+<div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant pt-space-xs">
+<div class="flex items-center justify-between">
+<span>Gross Subtotal</span>
+<span class="font-numeric-table font-semibold text-on-surface">$41.30</span>
+</div>
+<div class="flex items-center justify-between text-on-tertiary-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sell</span>
+                Item Discounts (Combined)
+              </span>
+<span class="font-numeric-table font-semibold">-$1.90</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Total Taxable Value</span>
+<span class="font-numeric-table font-semibold text-on-surface">$39.40</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Central GST (CGST @ 6%)</span>
+<span class="font-numeric-table font-medium text-on-surface">$1.92</span>
+</div>
+<div class="flex items-center justify-between">
+<span>State GST (SGST @ 6%)</span>
+<span class="font-numeric-table font-medium text-on-surface">$1.92</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Fiscal Rounding</span>
+<span class="font-numeric-table font-medium text-on-surface-variant">-$0.04</span>
+</div>
+</div>
+<!-- GRAND TOTAL HIGH-CONTRAST DISPLAY -->
+<div class="mt-space-xs p-space-md rounded-xl bg-tertiary-container flex items-center justify-between text-on-tertiary">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider font-semibold">Grand Total Payable</span>
+<span class="font-label-md text-label-md text-tertiary-fixed-dim">Net 4 Items Incl. All Taxes</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-numeric-total text-numeric-total text-tertiary-fixed font-bold leading-none">$43.20</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim mt-1">USD Currency (Offline Tender)</span>
+</div>
+</div>
+</div>
+<!-- 3C. Payment Tender Methods & Keypad Preset Interface -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Method Selector Tabs -->
+<div class="grid grid-cols-4 gap-space-xs p-1 bg-surface-container-low rounded-lg">
+<button class="py-2 px-space-xs rounded bg-surface-container-lowest text-secondary shadow-sm font-label-md text-label-md font-bold flex flex-col items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-base">payments</span>
+<span>Cash</span>
+</button>
+<button class="py-2 px-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium flex flex-col items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">qr_code_scanner</span>
+<span>UPI / QR</span>
+</button>
+<button class="py-2 px-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium flex flex-col items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">credit_card</span>
+<span>Local Card</span>
+</button>
+<button class="py-2 px-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium flex flex-col items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">call_split</span>
+<span>Split Tender</span>
+</button>
+</div>
+<!-- Cash Tender Details (Active Panel) -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase">Quick Cash Presets:</span>
+<div class="grid grid-cols-4 gap-space-xs">
+<button class="py-2 rounded-lg bg-surface-container-low hover:bg-surface-container font-numeric-table text-numeric-table font-bold text-on-surface transition-colors shadow-sm text-center" type="button">
+                $45.00
+              </button>
+<button class="py-2 rounded-lg bg-secondary text-on-secondary font-numeric-table text-numeric-table font-bold transition-colors shadow-sm text-center" type="button">
+                $50.00
+              </button>
+<button class="py-2 rounded-lg bg-surface-container-low hover:bg-surface-container font-numeric-table text-numeric-table font-bold text-on-surface transition-colors shadow-sm text-center" type="button">
+                $100.00
+              </button>
+<button class="py-2 rounded-lg bg-surface-container-high hover:bg-surface-container font-numeric-table text-numeric-table font-bold text-secondary transition-colors text-center" type="button">
+                Exact ($43.20)
+              </button>
+</div>
+<!-- Amount Received Input & Change Output Pill -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Amount Received</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">$</span>
+<input class="w-full bg-transparent font-headline-md text-headline-md text-on-surface font-bold font-numeric-table outline-none" type="text" value="50.00"/>
+</div>
+</div>
+<!-- High Contrast Change Display -->
+<div class="p-space-sm rounded-lg bg-tertiary-container text-on-tertiary flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-semibold">Change to Return</span>
+<span class="font-headline-lg text-headline-lg font-bold text-tertiary-fixed font-numeric-table leading-tight">$6.80</span>
+</div>
+</div>
+</div>
+<!-- Checkout Finalize Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-3.5 px-space-md rounded-xl bg-on-tertiary-container hover:bg-on-tertiary-container/90 text-on-secondary font-headline-md text-headline-md font-bold flex flex-col items-center justify-center gap-0.5 shadow-md transition-all active:scale-[0.99]" type="button">
+<div class="flex items-center gap-space-sm">
+<kbd class="px-2 py-0.5 rounded bg-surface-container-lowest/20 font-numeric-table text-label-md">F9</kbd>
+<span class="material-symbols-outlined text-2xl">print</span>
+<span>Save &amp; Print Bill (ESC/POS Direct)</span>
+</div>
+<span class="text-[11px] font-normal text-emerald-100 opacity-90">Commits directly to local SQLite transactions &amp; triggers EPSON COM1</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs transition-colors" type="button">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest font-numeric-table text-label-sm text-on-surface-variant">F8</kbd>
+<span>Commit DB Only</span>
+</button>
+<button class="py-2.5 px-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-base">receipt</span>
+<span>Print Preview (A4 / Thermal)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 4. Global Keyboard Shortcut Legend Banner -->
+<section class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-md text-on-surface-variant border border-surface-container-high/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-base">keyboard</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface">Offline POS Shortcuts:</span>
+</div>
+<div class="flex items-center flex-wrap gap-space-md font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold font-numeric-table shadow-sm">F1</kbd>
+<span>Search Barcode</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold font-numeric-table shadow-sm">F2</kbd>
+<span>New Bill</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold font-numeric-table shadow-sm">F4</kbd>
+<span>Hold Cart</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold font-numeric-table shadow-sm">F6</kbd>
+<span>Member</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold font-numeric-table shadow-sm">F8</kbd>
+<span>Save SQLite</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-tertiary-container font-bold font-numeric-table shadow-sm">F9</kbd>
+<span class="font-bold text-on-surface">Commit &amp; Print</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold font-numeric-table shadow-sm">F10</kbd>
+<span class="font-medium text-on-surface">Local Backup</span>
+</span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container text-error font-bold font-numeric-table shadow-sm">Esc</kbd>
+<span>Clear</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="font-label-sm text-label-sm font-medium">Receipt Printer: EPSON TM-T88VI (COM1 Direct)</span>
+</div>
+<div class="hidden lg:flex items-center gap-1 text-[11px] font-mono text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-xs text-emerald-600">check_circle</span>
+<span>SQLite Engine: Healthy</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline POS Interactive Micro-handler -->
+<script>
+    document.addEventListener('keydown', (e) => {
+      // Hotkey interceptors for POS Cashier ergonomic flow
+      if (e.key === 'F1') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[placeholder*="Scan Barcode"]');
+        if (searchInput) searchInput.focus();
+      }
+      if (e.key === 'F9') {
+        e.preventDefault();
+        alert('Transaction committed to local SQLite (apex_pos.db). Sending ESC/POS print payload to EPSON TM-T88VI on COM1.');
+      }
+      if (e.key === 'F10') {
+        e.preventDefault();
+        alert('Instant Offline SQLite Backup triggered: Created snapshot at C:\\ApexPOS\\Backup\\apex_pos_' + Date.now() + '.db');
+      }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        console.log('POS: Clear cart requested');
+      }
+    });
+  </script>
+</div></main></div></body></html>
