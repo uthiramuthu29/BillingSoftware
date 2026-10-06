@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const path = require('path');
 const db = require('./database');
 
-const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+const isDev = !app.isPackaged && process.env.BUILD_TARGET !== 'electron';
 
 let mainWindow;
 

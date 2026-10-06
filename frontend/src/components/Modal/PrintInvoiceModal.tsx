@@ -26,7 +26,7 @@ export const PrintInvoiceModal: React.FC = () => {
           <div className="flex items-start justify-between border-b pb-6 border-gray-200">
             <div className="flex flex-col">
               <span className="text-2xl font-bold tracking-tight text-gray-900">
-                APEX RETAIL MART
+                Gokul Dairy Farm
               </span>
               <span className="text-xs text-gray-500 font-medium mt-1">
                 Store #04 · 123 Commercial Avenue, Downtown Branch
@@ -149,7 +149,7 @@ export const PrintInvoiceModal: React.FC = () => {
 
           {/* 5. Footer Terms */}
           <div className="border-t pt-4 text-center text-xs text-gray-500">
-            Thank you for shopping with Apex Retail Mart! Please preserve this invoice for returns or exchanges within 14 days.
+            Thank you for shopping with Gokul Dairy Farm! Please preserve this invoice for returns or exchanges within 14 days.
           </div>
         </div>
 

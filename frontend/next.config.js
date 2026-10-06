@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: process.env.BUILD_TARGET === 'electron' ? 'export' : undefined,
+  assetPrefix: process.env.BUILD_TARGET === 'electron' ? '.' : undefined,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -14,3 +15,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+

@@ -192,7 +192,7 @@ export const MOCK_SALES_HISTORY: Bill[] = [
     paymentMode: 'Card',
     status: 'Completed',
     terminal: 'Terminal 02',
-    cashierName: 'Sarah Jenkins',
+    cashierName: 'Uthira Muthu S P',
     cashierId: 'CK-882'
   },
   {
@@ -220,7 +220,7 @@ export const MOCK_SALES_HISTORY: Bill[] = [
     paymentMode: 'UPI',
     status: 'Completed',
     terminal: 'Terminal 02',
-    cashierName: 'Sarah Jenkins',
+    cashierName: 'Uthira Muthu S P',
     cashierId: 'CK-882'
   },
   {

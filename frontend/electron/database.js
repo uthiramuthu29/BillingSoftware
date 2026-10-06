@@ -218,7 +218,7 @@ function createBill(bill) {
     paymentMode: bill.paymentMode,
     status: bill.status ?? 'Completed',
     terminal: bill.terminal ?? 'Terminal 02',
-    cashierName: bill.cashierName ?? 'Sarah Jenkins',
+    cashierName: bill.cashierName ?? 'Uthira Muthu S P',
     cashierId: bill.cashierId ?? 'CK-882'
   };
   const stmt = db.prepare(`

@@ -8,7 +8,7 @@ export const SettingsPage: React.FC = () => {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Store Profile State
-  const [storeName, setStoreName] = useState('APEX RETAIL MART — Downtown Branch');
+  const [storeName, setStoreName] = useState('Gokul Dairy Farm — Downtown Branch');
   const [terminalId, setTerminalId] = useState('Terminal 02 (POS-942)');
   const [storeCode, setStoreCode] = useState('STORE-#04');
   const [address, setAddress] = useState('123 Commercial Avenue, Suite 400, Downtown');

@@ -229,7 +229,7 @@ export const usePosStore = create<PosState>((set, get) => ({
       paymentMode,
       status: 'Completed',
       terminal: 'Terminal 02',
-      cashierName: 'Sarah Jenkins',
+      cashierName: 'Uthira Muthu S P',
       cashierId: 'CK-882'
     };
 

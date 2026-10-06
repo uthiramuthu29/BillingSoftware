@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
     "electron:build": "cross-env BUILD_TARGET=electron next build && electron-builder",
     "electron:pack": "cross-env BUILD_TARGET=electron next build && electron-builder --dir"
   },
@@ -39,6 +39,7 @@
   "build": {
     "appId": "com.gokuldairy.pos",
     "productName": "Gokul Dairy Farm POS",
+    "electronDist": "node_modules/electron/dist",
     "npmRebuild": false,
     "directories": {
       "output": "dist-electron"
